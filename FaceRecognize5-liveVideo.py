@@ -14,6 +14,7 @@ Names = []
 with open('train.pkl', 'rb') as f:
     Names = pickle.load(f)
     Encodings = pickle.load(f)
+
 font = cv2.FONT_HERSHEY_SIMPLEX
 cam = cv2.VideoCapture(1)
 
@@ -21,7 +22,7 @@ while True:
     _, frame = cam.read()
     frameSmall = cv2.resize(frame, (0, 0), fx=.33, fy=.33)
     frameRGB = cv2.cvtColor(frameSmall, cv2.COLOR_BGR2RGB)
-    facePositions = face_recognition.face_locations(frameRGB, model='cnn')
+    facePositions = face_recognition.face_locations(frameRGB)
     allEncodings = face_recognition.face_encodings(frameRGB, facePositions)
     for (top, right, bottom, left), face_encoding in zip(facePositions, allEncodings):
         name = 'Unknown Person'
