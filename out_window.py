@@ -1,8 +1,3 @@
-# Modified by Augmented Startups & Geeky Bee
-# October 2020
-# Facial Recognition Attendence GUI
-# Full Course - https://augmentedstartups.info/yolov4release
-# *-
 from PyQt5.QtGui import QImage, QPixmap
 from PyQt5.uic import loadUi
 from PyQt5.QtCore import pyqtSlot, QTimer, QDate
